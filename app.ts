@@ -48,7 +48,7 @@ export class AppComponent implements OnInit {
 
   @ViewChild('curvaDiImpresa') graficoCanvas!: ElementRef;
 
-  OnInit(): void {
+  ngOnInit(): void {
     console.log("Sistema pronto.");
   }
 
