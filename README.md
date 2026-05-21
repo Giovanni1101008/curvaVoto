@@ -1,6 +1,6 @@
 #Avvertenza
 
-Tu stai accettando dopo l'avvio in locale la trasmissione di dati personali e sensibili con l'App che salverà i tuoi dati su un Database e succesivamente trattati da un IA, se si vuole proseguire leggere tutto il file README. 
+Tu stai accettando dopo l'avvio in locale la trasmissione di dati personali e sensibili con l'App che salverà i tuoi dati su un Database e succesivamente trattati da un chatbot, se si vuole proseguire leggere tutto il file README. 
 
 # CurvaVoto
 
@@ -22,7 +22,7 @@ curvaVoto prende in input un file con dentro i voti e poi grazie alla potenza di
 
 ## Chatbot
 
-Il chatbot dell'App si chiama Vobot unione delle parole "Voto" e "bot" si basa sul modello di Claude AI perché ti offre molte opzioni nell'ambito scolastico e dell'apprendimento.
+Il chatbot dell'App si chiama Vobot unione delle parole "Voto" e "bot".
 Vobot una volta ricevuti i voti tramite file analizza i voti e crea una curva chiamata "Curva d'impresa".
 Una volta creata rianalizza la curva e ti dice dove devi studiare di più con consigli da vero e proprio prof di recupero.
 
@@ -36,6 +36,6 @@ La curva servirà per te ma anche per Vobot che si salverà tutto in un suo data
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 
-##Crediti
+##Credits
 
-Mattioli SRL,Claude AI,creatore(Giovanni Gasparini).
+Mattioli SRL,creatore(Giovanni Gasparini).
