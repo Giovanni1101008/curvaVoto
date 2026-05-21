@@ -1,0 +1,59 @@
+<div class="container">
+  <h2>CurvaVoti - {{ scuolaSelezionata.nome }}</h2>
+
+  <div class="input-card">
+    <div style="margin-bottom: 20px;">
+      <label for="scuolaSelect">Tipo di Scuola:</label><br>
+      <select id="scuolaSelect" (change)="cambiaScuola($event)" style="width: 100%; margin-top: 5px;">
+        @for(scuola of scuole; track scuola.id) {
+          <option [value]="scuola.id">{{ scuola.nome }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="input-group">
+      <div>
+        <label>Materia</label><br>
+        <select [(ngModel)]="nuovaMateria" [disabled]="metodoInserimento === 'file'">
+          @for(materia of materieAttuali; track materia) {
+            <option [value]="materia">{{ materia }}</option>
+          }
+        </select>
+      </div>
+      <div>
+        <label>Voto</label><br>
+        <input type="number" [(ngModel)]="nuovoPunteggio" [disabled]="metodoInserimento === 'file'" 
+               min="2" max="10" step="0.5" autocomplete="off">
+      </div>
+      <button class="btn-primary" (click)="aggiungiVoto()" [disabled]="metodoInserimento === 'file'">
+        Aggiungi
+      </button>
+    </div>
+
+    <hr style="margin: 20px 0; border-top: 1px solid #ddd;">
+
+    <div class="input-group">
+      <label>📁 Carica CSV (max 1MB):</label>
+      <input type="file" accept=".csv" (change)="onFileSelected($event)" 
+             [disabled]="metodoInserimento === 'manuale'">
+    </div>
+
+    <button (click)="resettaTutto()" class="btn-reset">🗑️ Reset Sessione</button>
+  </div>
+
+  <div class="vobot-box">
+    <div>
+      <strong>Vobot dice:</strong>
+      <p style="margin: 5px 0 0 0;">{{ vobotResponso }}</p>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <div style="position: relative; height: 40vh; width: 100%; max-height: 400px;">
+      <canvas #curvaDiImpresa></canvas>
+    </div>
+    <button class="btn-pdf" (click)="scaricaPDF()" [disabled]="voti.length === 0">
+      📄 Esporta PDF
+    </button>
+  </div>
+</div>
